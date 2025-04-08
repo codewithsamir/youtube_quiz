@@ -6,7 +6,7 @@ import { useState } from "react"
 
 
 
-const page = () => {
+const Page = () => {
   const [disablebtn, setdisablebtn] = useState(false)
   
   const [question, setquestion] = useState("")
@@ -32,14 +32,14 @@ const page = () => {
   setoptions(newoption)
   
   }
-  const updatedescription = (index,description)=>{
+  const updatedescription = (index :number,description:string)=>{
   const newoption = [...options]
   newoption[index].description= description;
   setoptions(newoption)
 
   
   }
-  const updateisCorrect = (index)=>{
+  const updateisCorrect = (index:number)=>{
   const newoption = options.map((data,i)=>(
     {...data,
        isCorrrect : i === index,
@@ -50,7 +50,7 @@ const page = () => {
 
   }
 
-  const deleteoption = (index)=>{
+  const deleteoption = (index:number)=>{
     setoptions((prev)=>(prev.filter((data,i)=>i!==index)))
 
   }
@@ -152,4 +152,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
